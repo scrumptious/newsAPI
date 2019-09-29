@@ -30,6 +30,7 @@ class NewsController extends Controller
      */
     public function store(Request $request)
     {
+        
         $last = News::get('id')->last();
         $id = $last['id'] + 1;
         $images = $request->file("images");

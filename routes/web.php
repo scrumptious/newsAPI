@@ -11,6 +11,12 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Auth::routes();
+
+Route::get('/', 'WelcomeController');
+
+Route::view('/about', 'about');
+Route::resource('/news', 'NewsController');
+
+Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/loguserout', 'HomeController@logout');
